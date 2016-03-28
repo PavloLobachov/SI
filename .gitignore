@@ -43,6 +43,7 @@ local.properties
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio
 
 index-coprocessor/index-coprocessor.iml
+*.iml
 
 ## Directory-based project format:
 .idea/
