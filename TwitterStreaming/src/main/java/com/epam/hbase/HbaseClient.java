@@ -103,8 +103,3 @@ public class HbaseClient {
 
 }
 
-class TableNotFoundException extends Exception{
-    public TableNotFoundException(String message) {
-        super(message);
-    }
-}

@@ -25,7 +25,7 @@ public class IndexCooprocessor extends BaseRegionObserver {
 
     @Override
     public void start(CoprocessorEnvironment env) throws IOException {
-        logger.info("(start)");
+        logger.info("(Start Index Coprocessor)");
         pool = new HTablePool(env.getConfiguration(), 10);
     }
 
@@ -60,9 +60,9 @@ public class IndexCooprocessor extends BaseRegionObserver {
 
             HTableInterface idx_table = pool.getTable(Bytes.toBytes(INDEX_TABLE));
             // create row key
-            byte [] rowkey = mkRowKey(id, date); //make the row key
+            byte [] rowKey = mkRowKey(id, date); //make the row key
 
-            Put indexPut = new Put(rowkey);
+            Put indexPut = new Put(rowKey);
             indexPut.add(
                     Bytes.toBytes("data"),
                     Bytes.toBytes("originalRowKey"),
@@ -86,7 +86,7 @@ public class IndexCooprocessor extends BaseRegionObserver {
 
     @Override
     public void stop(CoprocessorEnvironment env) throws IOException {
-        logger.info("(stop)");
+        logger.info("(Stop Index Coprocessor)");
         pool.close();
     }
 
