@@ -68,6 +68,8 @@ public class IndexCooprocessor extends BaseRegionObserver {
                     Bytes.toBytes("originalRowKey"),
                     originalRow);
 
+//            originalRow ===== Bytes.toBytes(String.format("%1$s:%2$s", Bytes.toString(id), Bytes.toString(date)))
+
             idx_table.put(indexPut);
             idx_table.close();
 
